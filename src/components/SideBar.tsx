@@ -1,6 +1,10 @@
+import { useState } from "react";
+import { Sun } from "lucide-react";
 import profile from "../assets/Oval.png";
 
 function SideBar() {
+  const [theme, setTheme] = useState("light");
+
   return (
     <aside className="w-full lg:w-22 lg:min-h-screen bg-sidebar flex lg:flex-col items-center shrink-0 z-10 lg:rounded-tr-3xl lg:rounded-br-3xl">
       <svg
@@ -44,9 +48,27 @@ function SideBar() {
 
       <div className="flex lg:flex-col flex-1 items-center justify-end lg:py-5 gap-6 md:gap-12 w-full">
         <div className="w-10 h-10 rounded-full flex items-center justify-center cursor-pointer">
-          <svg className="w-7 h-7" viewBox="0 0 24 24" fill="#7E88C3">
-            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" />
-          </svg>
+          {theme === "light" ? (
+            <svg
+              className="w-7 h-7"
+              viewBox="0 0 24 24"
+              fill="#7E88C3"
+              onClick={() => {
+                setTheme("dark");
+                document.documentElement.className = "dark";
+              }}
+            >
+              <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" />
+            </svg>
+          ) : (
+            <Sun
+              color="#ffff00"
+              onClick={() => {
+                setTheme("light");
+                document.documentElement.className = "light";
+              }}
+            />
+          )}
         </div>
 
         <div className="pr-6 lg:pr-0">

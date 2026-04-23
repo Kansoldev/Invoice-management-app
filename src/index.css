@@ -4,5 +4,30 @@
 @theme {
   --font-league-spartan: "League Spartan", sans-serif;
   --color-sidebar: #373b53;
-  --color-purple: #7b5cf0;
+  --color-primary: var(--primary);
+  --color-background: var(--background);
+  --color-topnav: var(--top-navbar-text);
+  --color-invoice: var(--invoice);
+  --color-invoice-id: var(--invoice-id);
+  --color-paid: var(--paid-status);
+  --color-paid-bg: var(--paid-status-bg);
+}
+
+:root {
+  --background: #f8f8fb;
+  --invoice: #fff;
+  --primary: #7b5cf0;
+  --top-navbar-text: #0c0e16;
+  --invoice-id: #7e88c3;
+  --paid-text: "#33D69F";
+  --paid-status: #33d69f;
+}
+
+.dark {
+  --background: #141625;
+  --invoice: #1e2139;
+  --primary: #fff;
+  --top-navbar-text: #fff;
+  --invoice-id: #fff;
+  --paid-status-bg: #33d6a079;
 }

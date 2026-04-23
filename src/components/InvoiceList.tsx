@@ -3,9 +3,9 @@ import type { Invoice } from "../types";
 
 const statusConfig = {
   Paid: {
-    dot: "bg-emerald-400",
-    bg: "bg-emerald-50",
-    text: "text-emerald-600",
+    dot: "bg-paid",
+    bg: "bg-paid-bg",
+    text: "text-paid",
     border: "border-emerald-100",
   },
   Pending: {
@@ -50,15 +50,15 @@ function InvoiceRow({ invoice, index }: { invoice: Invoice; index: number }) {
         transition-all duration-200 ease-out
         ${
           hovered
-            ? "border-slate-300 shadow-md shadow-slate-100 -translate-y-0.5 bg-white"
-            : "border-slate-100 bg-white shadow-sm"
+            ? "border-slate-300 -translate-y-0.5 bg-white"
+            : "border-invoice bg-invoice"
         }
       `}
       style={{ animationDelay: `${index * 60}ms` }}
     >
       <div className="w-24 shrink-0">
         <span className="text-slate-400 text-sm font-medium">#</span>
-        <span className="text-slate-800 text-sm font-bold tracking-wide">
+        <span className="text-invoice-id text-sm font-bold tracking-wide">
           {invoice.id}
         </span>
       </div>
@@ -73,7 +73,7 @@ function InvoiceRow({ invoice, index }: { invoice: Invoice; index: number }) {
       </div>
 
       <div className="w-32 shrink-0">
-        <span className="text-slate-800 text-base font-bold tracking-tight">
+        <span className="text-topnav text-base font-bold tracking-tight">
           £&nbsp;{invoice.amount}
         </span>
       </div>
@@ -107,7 +107,7 @@ function InvoiceRow({ invoice, index }: { invoice: Invoice; index: number }) {
 
 export default function InvoiceList({ invoices }: { invoices: Invoice[] }) {
   return (
-    <div className="bg-slate-50 flex items-center justify-center mt-12 w-full max-w-190 mb-4">
+    <div className="flex items-center justify-center mt-12 w-full max-w-190 mb-4">
       <div className="flex flex-col gap-3 px-3 md:px-0 w-full">
         {invoices.map((invoice, i) => (
           <InvoiceRow key={invoice.id} invoice={invoice} index={i} />
