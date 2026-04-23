@@ -35,8 +35,8 @@ function SideBar() {
           />
         </g>
         <path
-          fill-rule="evenodd"
-          clip-rule="evenodd"
+          fillRule="evenodd"
+          clipRule="evenodd"
           d="M29.486 23L36 35.8992L42.514 23C46.9652 25.3089 50 29.9102 50 35.2097C50 42.8258 43.732 48.9999 36 48.9999C28.268 48.9999 22 42.8258 22 35.2097C22 29.9102 25.0348 25.3089 29.486 23Z"
           fill="white"
         />
