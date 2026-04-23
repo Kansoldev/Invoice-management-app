@@ -22,8 +22,11 @@ const statusConfig = {
   },
 };
 
+type statusConfigType = keyof typeof statusConfig;
+
 function StatusBadge({ status }: { status: string }) {
-  const cfg = statusConfig[status];
+  const invoiceStatus = status as statusConfigType;
+  const cfg = statusConfig[invoiceStatus];
 
   return (
     <span
